@@ -9,7 +9,7 @@ function Header() {
   console.log(path);
   return (
     <div className="header">
-      {path === "/portfolio/" ? 
+      {path === "/" ? 
         <p className="header__logo">D</p>
       :
         <a href='/' className="header__logo"><img src={require("../../Images/arrowleft.svg").default} alt="" /></a>
