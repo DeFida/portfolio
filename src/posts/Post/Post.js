@@ -10,7 +10,7 @@ function Post({posts}) {
   
   let location = useLocation();
   let post = posts[location.pathname];
-  
+  console.log(location.pathname);
   return (
     <div className="post">
       <Header />
