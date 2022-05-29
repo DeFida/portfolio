@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="app">
       <Switch>
-        <Route path="/" exact>
+        <Route path="/portfolio/" exact>
           <Header />
           <Greeting />
           <Informations />
@@ -50,7 +50,7 @@ function App() {
           <Projects />
           <Footer />
         </Route>
-        <Route path="/">
+        <Route path="/portfolio/">
           <Post posts={posts} />
         </Route>
       </Switch>
