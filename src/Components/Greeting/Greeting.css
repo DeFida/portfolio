@@ -1,0 +1,44 @@
+.greeting {
+  width: 1140px;
+  margin: 120px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+.greeting__h1 {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 39px;
+}
+
+.greeting__h2 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 33px;
+  margin-top: 20px;
+}
+
+.greeting__p {
+  font-size: 24px;
+  margin-top: 20px;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 1279px) {
+  .greeting {
+    width: calc(100% - 60px);
+    margin-top: 100px;
+
+  }
+
+  .greeting__h1 {
+    font-size: 36px;
+  }
+  .greeting__h2 {
+    font-size: 32px;
+  }
+  
+  
+}
