@@ -6,14 +6,12 @@ import { useLocation } from 'react-router-dom'
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 
-function Post({posts}) {
+function Post({post, changeTheContent, cont}) {
   
-  let location = useLocation();
-  let post = posts[location.pathname];
-  console.log(location.pathname);
+
   return (
     <div className="post">
-      <Header />
+      <Header cont={cont} changeTheContent={changeTheContent}/>
       <h1 className='post__title'>{post.title}</h1>
 
       {Array.from(post.content).map((e) => {

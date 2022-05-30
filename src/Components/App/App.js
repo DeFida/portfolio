@@ -9,12 +9,14 @@ import Footer from '../Footer/Footer'
 import Post from '../../posts/Post/Post'
 
 import { Route, Switch} from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
 
+  let [currentContent, setCurrentContent] = useState("/");
+
   const posts = {
-    "/movie-explorer": {
-      link: "/movie_explorer",
+    "movie-explorer": {
       title: "Movie Explorer",
       content: [
         {type: "image", src: require("../../Images/movieexplorer.svg").default}, 
@@ -25,8 +27,7 @@ function App() {
       ]
     },
 
-    "/qhat": {
-      link: "/qhat",
+    "qhat": {
       title: "QHat Messenger",
       content: [
         {type: "image", src: require("../../Images/qhat.svg").default}, 
@@ -39,21 +40,35 @@ function App() {
     }
   }
 
+  function changeTheContent(content) {
+    setCurrentContent(content);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+  });
+
+  }
+
   return (
     <div className="app">
-      <Switch>
-        <Route path="/" exact>
-          <Header />
+
+      {currentContent === "/" ?
+        <>
+          <Header cont={currentContent} changeTheContent={changeTheContent}/>
           <Greeting />
           <Informations />
 
-          <Projects />
+          <Projects changeTheContent={changeTheContent} />
           <Footer />
-        </Route>
-        <Route path="/">
-          <Post posts={posts} />
-        </Route>
-      </Switch>
+        </>
+      :
+        <Post post={posts[currentContent]} cont={currentContent} changeTheContent={changeTheContent} />
+      }
+          
+
+
+          
+
     </div>
   );
 }

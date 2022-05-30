@@ -2,17 +2,13 @@
 import './Header.css';
 import { useLocation } from 'react-router-dom'
 
-function Header() {
-  let location = useLocation();
-  let path = location.pathname;
-
-  console.log(path);
+function Header(props) {
   return (
     <div className="header">
-      {path === "/" ? 
+      {props.cont === "/" ? 
         <p className="header__logo">D</p>
       :
-        <a href='/' className="header__logo"><img src={require("../../Images/arrowleft.svg").default} alt="" /></a>
+        <p style={{cursor: "pointer"}} onClick={() => {props.changeTheContent("/")}} className="header__logo"><img src={require("../../Images/arrowleft.svg").default} alt="" /></p>
       }
 
       
