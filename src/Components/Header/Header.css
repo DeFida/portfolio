@@ -3,7 +3,7 @@
   margin: 60px auto 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .header__logo {
@@ -11,12 +11,30 @@
   font-weight: 400;
   font-size: 44px;
   line-height: 40px;
-  
+  margin-right: auto;
   color: #2F4858;
 }
 
 .header__cv {
   font-size: 24px;
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-right: 40px;
+}
+
+.languages__ln {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.languages__ln_selected {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1279px) {

@@ -6,7 +6,7 @@ function Informations() {
     <div className="informations">
       <div className="informations__wrapper">
         <div className="information">
-          <h3 className="information__h3">network</h3>
+          <h3 className="information__h3"></h3>
 
           <p className="information__p">tynyshtyqdastan@gmail.com</p>
           <a target="_blank" className="information__p" href="https://www.instagram.com/de_fida_">Instagram <img src={require("../../Images/arrow.svg").default} className="arrow" alt="" /></a>
